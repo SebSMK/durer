@@ -15,7 +15,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=9" />
 
   <link rel="stylesheet" type="text/css" media="all" href="css/iip.min.css" />
-  <link rel="stylesheet" type="text/css" media="all" href="css/smk.css" />   
+  <link rel="stylesheet" type="text/css" media="all" href="css/smk.css" />
+  
   
 <!--[if lt IE 10]>
   <meta http-equiv="X-UA-Compatible" content="IE=9" >
@@ -64,6 +65,30 @@
   <script type="text/javascript" src="src/blending.js"></script>
   <script type="text/javascript" src="src/lang/help.en.js"></script>
   
+ 
+  
+  <script>
+  var ADAPT_CONFIG = {
+  // Where is your CSS?
+  path: 'css/',
+
+  // false = Only run once, when page first loads.
+  // true = Change on window resize and page tilt.
+  dynamic: true,
+ 
+  // First range entry is the minimum.
+  // Last range entry is the maximum.
+  // Separate ranges by "to" keyword.
+  range: [    
+    '0px  to 980px  = 720.css',
+    '980px  to 1280px = 960.css',
+    '1280px  = 1200.css'    
+  ]
+};
+  </script>
+  
+   <script type="text/javascript" src="js/adapt.min.js"></script>
+  
 <!--[if lt IE 7]>
   <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js">IE7_PNG_SUFFIX = ".png";</script>
 <![endif]-->
@@ -74,9 +99,9 @@
     // Server path: set if not using default path
     var image = '/var/www/fcgi-images-original/KKSgb9840_512_pyr-v2.tif';
     var server = '/iipsrv/iipsrv.fcgi';
-    
+                                                                                                                                                                                                              
     // Copyright or information message    
-    var credit = "G&aring; p&aring; opdagelse i v&aelig;rket: Zoom ind og find de skjulte detaljer!<p><i>For yderligere information om zoom funktionaliteter, h&oslash;jre-klik p&aring; billeden.</i></p>";
+    var credit = "G&aring; p&aring; opdagelse i v&aelig;rket: Zoom ind og find de skjulte detaljer!<p><i>h&oslash;jreklik for mere information om zoom funktionalitet.</i></p>";
 
     var annotations = {
         1: { x: 0.36, y: 0.01, w: 0.30, h: 0.21, text: "<div style='width:300px;padding:1em'><img style='float:right;margin:5px' src='images/annotations/Trane.gif'/><h1>Trane</h1> Tranen her holder en sten i sin l&oslash;ftede klo og henviser til kejserens &aring;rv&aring;genhed. N&aring;r tranen er ved at falde i s&oslash;vn, taber den stenen i kloen og v&aring;gner straks op.</div>"},
