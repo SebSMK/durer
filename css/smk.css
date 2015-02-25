@@ -1,0 +1,42 @@
+.navcontainer .toolbar {
+    display:none;
+}
+
+.navcontainer .navbuttons {
+   /* background: none;*/
+}
+
+.iipmooviewer .canvas .annotation:hover {    
+   border: 1px solid rgba(200, 0, 126, 0.1);   
+   cursor: pointer;
+}
+
+.iipmooviewer .canvas .annotation {
+    background-color: rgba(255, 255, 255, 0);    
+/*    border: 1px solid rgba(200, 0, 126, 1);*/
+    opacity: 1;
+    transition: none;
+}
+
+.iipmooviewer .credit {    
+    font-size: 1em;
+   /* line-height: 1.4em;*/
+    width: 20%;
+}
+
+.iipmooviewer .credit p{    
+    font-size: .8em;
+    line-height: 1em;
+    margin-top: 1em;
+}
+
+.tip {
+    font-size: 1.1em;
+    line-height: 1.2em;
+}
+
+
+.iipmooviewer img.logo {    
+    cursor: default;    
+    transition: none;    
+}
