@@ -31,9 +31,7 @@ IIPMooViewer.implement({
     this.annotationTip = null;
     this.annotationsVisible = true;
 
-    this.createAnnotationsArray();
-
-    //this.mouseinAnnotation();            
+    this.createAnnotationsArray();           
   },
   
   mouseinAnnotation: function() {
@@ -153,8 +151,7 @@ IIPMooViewer.implement({
                                         borderColor: 'rgba(200, 0, 126, 0.3)'}, 1000, "linear");                                  
                   }
                 );                                             
-      };      
-      //annotation.addEvent('mouseenter', mousein);
+      };           
       
       var mouseout = function() {                                                                                         
               $jq(this).finish().animate(
@@ -162,11 +159,9 @@ IIPMooViewer.implement({
                 200,
                 "linear"                
                 );                                             
-      };      
-      //annotation.addEvent('mouseleave', mouseout);
+      };            
       
-       $jq(annotation).hover(mousein, mouseout);
-            
+       $jq(annotation).hover(mousein, mouseout);            
     }
 
     // Add our annotation text

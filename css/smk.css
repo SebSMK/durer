@@ -19,6 +19,16 @@
     transition: none;
 }
 
+.tip .tip-text .smk_annot{
+	width:300px;
+	padding:1em;
+}
+
+.tip .tip-text .smk_annot img{ 
+  float:right;
+  margin:5px;
+}
+
 .iipmooviewer .credit {       
     width: 20%; 
     max-width: 250px;
