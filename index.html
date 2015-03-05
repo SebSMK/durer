@@ -54,7 +54,7 @@
   <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
   <script>var $jq = jQuery.noConflict();</script>
   
-  <script type="text/javascript" src="js/smk-iipmooviewer-2.1-compressed"></script>
+  <script type="text/javascript" src="js/smk-iipmooviewer-2.1-compressed.js"></script>
 
   
  
@@ -73,8 +73,8 @@
   // Separate ranges by "to" keyword.
   range: [    
     '0px  to 980px  = 720.css',
-    '980px  to 1280px = 960.css',
-    '1280px  = 1200.css'    
+    '980px  to 1580px = 960.css',
+    '1580px  = 1200.css'    
   ]
 };
   </script>
@@ -127,6 +127,13 @@
  </head>
 
  <body>
+  <div id="lang">    
+  <ul class="language-selector">
+			<li class="active"><a href="#">Dansk</a></li>
+			<li>/</li>
+			<li class=""><a href="en">English</a></li>
+		</ul>		               
+  </div>  
    <div id="viewer"></div>
  </body>
 

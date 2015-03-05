@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+ <head>
+  <meta charset="utf-8" />
+  <meta name="DC.creator" content="Ruven Pillay &lt;ruven@users.sourceforge.netm&gt;"/>
+  <meta name="DC.title" content="IIPMooViewer 2.0: HTML5 High Resolution Image Viewer"/>
+  <meta name="DC.subject" content="IIPMooViewer; IIPImage; Visualization; HTML5; Ajax; High Resolution; Internet Imaging Protocol; IIP"/>
+  <meta name="DC.description" content="IIPMooViewer is an advanced javascript HTML5 image viewer for streaming high resolution scientific images"/>
+  <meta name="DC.rights" content="Copyright &copy; 2003-2012 Ruven Pillay"/>
+  <meta name="DC.source" content="http://iipimage.sourceforge.net"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta http-equiv="X-UA-Compatible" content="IE=9" />
+
+  <link rel="stylesheet" type="text/css" media="all" href="../css/iip.min.css" />
+  <link rel="stylesheet" type="text/css" media="all" href="../css/smk.css" />
+  
+  
+<!--[if lt IE 10]>
+  <meta http-equiv="X-UA-Compatible" content="IE=9" >
+  <link rel="stylesheet" type="text/css" media="all" href="../css/ie.min.css" />
+<![endif]-->
+
+  <!-- Basic example style for a 100% view -->
+  <style type="text/css">
+    body{
+      height: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    div#viewer{
+      height: 100%;
+      min-height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+    }	
+  </style>
+
+  <link rel="shortcut icon" href="../images/smk-favicon.png" />
+  <link rel="apple-touch-icon" href="../images/smk.png" />
+
+  <title>SMK | A.D&uuml;rer - Kejser Mamilian den 1.'s &aelig;resport</title>  
+
+  <script type="text/javascript" src="../js/mootools-core-1.5.1-full-nocompat-yc.js"></script>
+  
+    
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script>
+  <script>var $jq = jQuery.noConflict();</script>
+  
+  <script type="text/javascript" src="../js/smk-iipmooviewer-2.1-compressed.js"></script>
+
+  
+ 
+  
+  <script>
+  var ADAPT_CONFIG = {
+  // Where is your CSS?
+  path: '../css/',
+
+  // false = Only run once, when page first loads.
+  // true = Change on window resize and page tilt.
+  dynamic: true,
+ 
+  // First range entry is the minimum.
+  // Last range entry is the maximum.
+  // Separate ranges by "to" keyword.
+  range: [    
+    '0px  to 980px  = 720.css',
+    '980px  to 1580px = 960.css',
+    '1580px  = 1200.css'    
+  ]
+};
+  </script>
+  
+   <script type="text/javascript" src="../js/adapt.min.js"></script>
+  
+<!--[if lt IE 7]>
+  <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE7.js">IE7_PNG_SUFFIX = ".png";</script>
+<![endif]-->
+
+  <script type="text/javascript">
+
+    // IIPMooViewer options: See documentation at http://iipimage.sourceforge.net for more details
+    // Server path: set if not using default path
+    var image = '/var/www/fcgi-images-original/KKSgb9840_512_pyr-v2.tif';
+    var server = '/iipsrv/iipsrv.fcgi';
+                                                                                                                                                                                                              
+    // Copyright or information message    
+    var credit = "Discover the artwork: Zoom in and find the hidden details!<p><i>right-click for more information on the zoom functionality.</i></p>";
+
+    var annotations = {
+        1: { x: 0.38, y: 0.07, w: 0.22, h: 0.09, text: "<div class='smk_annot'><img src='../images/annotations/Trane.gif'/><h1>Crane</h1>This crane holds a stone in its raised claw &ndash; a reference to the ceaseless vigilance of the emperor. Whenever the crane is on the brink of falling asleep, it drops the stone in its claw and immediately wakes up, fully alert.</div>"},
+        2: { x: 0.35, y: 0.19, w: 0.28, h: 0.03, text: "<div class='smk_annot'><img src='../images/annotations/Delfin.gif'/><h1>Dolphins</h1>At the feet of two guardian figures are two strange dolphins. These dolphins are not explained in any of the texts that appear on the print &ndash; and today we do not know whether they originally had any specific symbolic significance.</div>"},                
+        3: { x: 0.01, y: 0.39, w: 0.25, h: 0.15, text: "<div class='smk_annot'><img src='../images/annotations/Historiescene.gif'/><h1>History scene</h1>In this scene the emperor is celebrated for the piety and chivalrous nature that God has bestowed on him. The verse says:<blockquote>The Lord to him his grace has shown / And ever more pious he has grown. / Adept to play a knightly part, / for this he had the wish and heart. / From early youth he practiced same; / his greatest virtue it became.</blockquote></div>"},
+        4: { x: 0.27, y: 0.34, w: 0.21, h: 0.15, text: "<div class='smk_annot'><img src='../images/annotations/Kejsere.gif'/><h1>Caesar</h1>Here we see the Roman emperor Julius Caesar, with whom Maximilian was keen to be associated. Two other famous Roman emperors also appear alongside Caesar: Augustus and Tiberius.</div>"},
+        5: { x: 0.37, y: 0.50, w: 0.27, h: 0.15, text: "<div class='smk_annot'><img src='../images/annotations/Granataeble.gif'/><h1>Pomegranate</h1>Pomegranates appear in several places in the Arch. The text at the bottom of the work informs us that the emperor chose the pomegranate as his symbol because it &ndash; like him &ndash; was not particularly attractive on the outside, but very beautiful on the inside, filled with well&ndash;shaped seeds ready to bear fruit.</div>"},
+        6: { x: 0.52, y: 0.66, w: 0.26, h: 0.17, text: "<div class='smk_annot'><img src='../images/annotations/Sirener.gif'/><h1>Chained sirens</h1>In Greek mythology sirens are seductive women with the tails of fish. They lure sailors to their deaths with their song. Here we see them chained to the columns: they are kept firmly in check and thus cannot harm those who pass through the arch.</div>"},           
+};    
+
+   // Create our viewer object
+    // See documentation for more details of options
+    new IIPMooViewer( "viewer", {
+
+  
+  	image: image,
+		server: server,
+		credit: credit, 
+		scale: 7.17,
+		showNavWindow: false,
+		showNavButtons: true,
+		winResize: true,
+		protocol: 'iip',
+	  annotations: annotations,
+    navWinSize : 0.07     
+  
+    });
+
+  </script>
+
+ </head>
+
+ <body>
+   <div id="lang">    
+    <ul class="language-selector">
+			<li class=""><a href="../">Dansk</a></li>
+			<li>/</li>
+			<li class="active"><a href="#">English</a></li>
+		</ul>		               
+  </div>
+   <div id="viewer"></div>
+ </body>
+
+</html>
